@@ -571,6 +571,7 @@ const char CD_NODESC[] = "no desc";
 // { Clan Arena
 #define CD_CARENA			"toggle clan arena"
 #define CD_WIPEOUT			"toggle wipeout"
+#define CD_FREEZETAG		"toggle freeze tag"
 // }
 #define CD_FORCE_SPEC		"force spec players"
 // { server side bans
@@ -806,6 +807,7 @@ cmd_t cmds[] =
 	{ "XonX", 						DEF(UserMode), 					14, 		CF_PLAYER | CF_SPC_ADMIN | CF_PARAMS, 									CD_XONX },
 	{ "wipeout", 					DEF(UserMode), 					15, 		CF_PLAYER | CF_SPC_ADMIN | CF_PARAMS, 									CD_WIPEOUT },
 	{ "carena", 					DEF(UserMode), 					16, 		CF_PLAYER | CF_SPC_ADMIN | CF_PARAMS, 									CD_CARENA },
+	{ "freezetag", 					DEF(UserMode), 					17, 		CF_PLAYER | CF_SPC_ADMIN | CF_PARAMS, 									CD_FREEZETAG },
 
 	{ "practice", 					TogglePractice, 				0, 			CF_PLAYER | CF_SPC_ADMIN, 												CD_PRACTICE },
 	{ "wp_reset", 					Wp_Reset, 						0, 			CF_PLAYER, 																CD_WP_RESET },
@@ -4414,6 +4416,30 @@ const char carena_um_init[] =
 	"k_mode 2\n"
 ;
 
+const char freeze_um_init[] =
+	"k_clan_arena 3\n"				// enable clan arena
+	"k_clan_arena_rounds 9\n"		// number of rounds in a series
+	"k_clan_arena_max_respawns 0\n"	// number of respawns per round
+	"dp 0\n"						// don't drop packs
+	"teamplay 4\n"
+	"deathmatch 5\n"
+	"timelimit 0\n"					// no time limit
+	"maxclients 8\n"				// no more than 8 players in ca/wipeout
+	"k_maxclients 8\n"				// no more than 8 players in ca/wipeout
+	"k_pow 0\n"
+	"k_overtime 0\n"
+	"k_spectalk 1\n"				// enable spec talk by default
+	"k_exttime 0\n"					// zero overtime length
+	"k_spw 1\n"						// KT Safety spawns (important for CA)
+	"k_dmgfrags 1\n"				// 1 "frag" for every 100 damage dealt
+	"k_teamoverlay 1\n"				// enable teamoverlay by default
+	"k_membercount 1\n"				// no minimum team size
+	"k_noitems 1\n"					// no items on the map
+	"coop 0\n"						// no coop
+	"k_lockmax 2\n"					// maximum number of teams
+	"k_mode 2\n"
+;
+
 usermode um_list[] =
 {
 	{ "1on1", 		"\223 on \223", 		_1on1_um_init, 		UM_1ON1, 	 1 },
@@ -4432,6 +4458,7 @@ usermode um_list[] =
 	{ "XonX", 		"X on X", 				_XonX_um_init, 		UM_XONX,	 0 },
 	{ "wipeout", 	"Wipeout", 				wipeout_um_init, 	UM_4ON4,	 0 },
 	{ "ca", 		"Clan Arena", 			carena_um_init, 	UM_4ON4,	 0 },
+	{ "freezetag", 	"Freeze Tag", 			freeze_um_init, 	UM_4ON4,	 0 },
 };
 
 int um_cnt = sizeof(um_list) / sizeof(um_list[0]);
@@ -6504,6 +6531,9 @@ char* lastscores2str(lsType_t lst)
 		case lsWO:
 			return "Wipeout";
 
+		case lsFR:
+			return "Freeze Tag";
+
 		case lsHM:
 			return "HoonyMode";
 
@@ -6596,7 +6626,13 @@ void lastscore_add(void)
 		qbool isCa = isCA();
 		if (isCa)
 		{
-			lst = cvar("k_clan_arena") == 2 ? lsWO : lsCA;
+			if (cvar("k_clan_arena") == 2) {
+				lst = lsWO;
+			} else if (cvar("k_clan_arena") == 3) {
+				lst = lsFR;
+			} else {
+				lst = lsCA;
+			}
 		}
 		else if (isTeam())
 		{
@@ -9140,6 +9176,7 @@ void ListGameModes(void)
 		"arena",
 		"carena",
 		"wipeout",
+		"freezetag",
 		"yawnmode",
 	};
 	int i, j;

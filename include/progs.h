@@ -1054,6 +1054,7 @@ typedef struct gedict_s
 	qbool can_respawn;
 	qbool in_play;							// is player still fighting?
 	qbool in_limbo;							// waiting to respawn during wipeout
+	qbool in_freeze;						// waiting to be unfrozen in freeze tag
 	qbool last_alive_active;				// if last alive timer is active
 	qbool no_pain;							// if player can take any damage to health or armor
 	float ca_round_frags;

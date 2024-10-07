@@ -1,0 +1,662 @@
+[
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/g_main.c.o -c /home/lanceb/ktx/src/g_main.c",
+  "file": "/home/lanceb/ktx/src/g_main.c",
+  "output": "CMakeFiles/qwprogs.dir/src/g_main.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/admin.c.o -c /home/lanceb/ktx/src/admin.c",
+  "file": "/home/lanceb/ktx/src/admin.c",
+  "output": "CMakeFiles/qwprogs.dir/src/admin.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/arena.c.o -c /home/lanceb/ktx/src/arena.c",
+  "file": "/home/lanceb/ktx/src/arena.c",
+  "output": "CMakeFiles/qwprogs.dir/src/arena.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/bot_aim.c.o -c /home/lanceb/ktx/src/bot_aim.c",
+  "file": "/home/lanceb/ktx/src/bot_aim.c",
+  "output": "CMakeFiles/qwprogs.dir/src/bot_aim.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/bot_blocked.c.o -c /home/lanceb/ktx/src/bot_blocked.c",
+  "file": "/home/lanceb/ktx/src/bot_blocked.c",
+  "output": "CMakeFiles/qwprogs.dir/src/bot_blocked.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/bot_botenemy.c.o -c /home/lanceb/ktx/src/bot_botenemy.c",
+  "file": "/home/lanceb/ktx/src/bot_botenemy.c",
+  "output": "CMakeFiles/qwprogs.dir/src/bot_botenemy.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/bot_botgoals.c.o -c /home/lanceb/ktx/src/bot_botgoals.c",
+  "file": "/home/lanceb/ktx/src/bot_botgoals.c",
+  "output": "CMakeFiles/qwprogs.dir/src/bot_botgoals.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/bot_bothazd.c.o -c /home/lanceb/ktx/src/bot_bothazd.c",
+  "file": "/home/lanceb/ktx/src/bot_bothazd.c",
+  "output": "CMakeFiles/qwprogs.dir/src/bot_bothazd.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/bot_bothelp.c.o -c /home/lanceb/ktx/src/bot_bothelp.c",
+  "file": "/home/lanceb/ktx/src/bot_bothelp.c",
+  "output": "CMakeFiles/qwprogs.dir/src/bot_bothelp.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/bot_botimp.c.o -c /home/lanceb/ktx/src/bot_botimp.c",
+  "file": "/home/lanceb/ktx/src/bot_botimp.c",
+  "output": "CMakeFiles/qwprogs.dir/src/bot_botimp.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/bot_botjump.c.o -c /home/lanceb/ktx/src/bot_botjump.c",
+  "file": "/home/lanceb/ktx/src/bot_botjump.c",
+  "output": "CMakeFiles/qwprogs.dir/src/bot_botjump.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/bot_botpath.c.o -c /home/lanceb/ktx/src/bot_botpath.c",
+  "file": "/home/lanceb/ktx/src/bot_botpath.c",
+  "output": "CMakeFiles/qwprogs.dir/src/bot_botpath.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/bot_botphys.c.o -c /home/lanceb/ktx/src/bot_botphys.c",
+  "file": "/home/lanceb/ktx/src/bot_botphys.c",
+  "output": "CMakeFiles/qwprogs.dir/src/bot_botphys.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/bot_botstat.c.o -c /home/lanceb/ktx/src/bot_botstat.c",
+  "file": "/home/lanceb/ktx/src/bot_botstat.c",
+  "output": "CMakeFiles/qwprogs.dir/src/bot_botstat.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/bot_botthink.c.o -c /home/lanceb/ktx/src/bot_botthink.c",
+  "file": "/home/lanceb/ktx/src/bot_botthink.c",
+  "output": "CMakeFiles/qwprogs.dir/src/bot_botthink.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/bot_botwater.c.o -c /home/lanceb/ktx/src/bot_botwater.c",
+  "file": "/home/lanceb/ktx/src/bot_botwater.c",
+  "output": "CMakeFiles/qwprogs.dir/src/bot_botwater.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/bot_botweap.c.o -c /home/lanceb/ktx/src/bot_botweap.c",
+  "file": "/home/lanceb/ktx/src/bot_botweap.c",
+  "output": "CMakeFiles/qwprogs.dir/src/bot_botweap.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/bot_client.c.o -c /home/lanceb/ktx/src/bot_client.c",
+  "file": "/home/lanceb/ktx/src/bot_client.c",
+  "output": "CMakeFiles/qwprogs.dir/src/bot_client.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/bot_commands.c.o -c /home/lanceb/ktx/src/bot_commands.c",
+  "file": "/home/lanceb/ktx/src/bot_commands.c",
+  "output": "CMakeFiles/qwprogs.dir/src/bot_commands.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/bot_items.c.o -c /home/lanceb/ktx/src/bot_items.c",
+  "file": "/home/lanceb/ktx/src/bot_items.c",
+  "output": "CMakeFiles/qwprogs.dir/src/bot_items.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/bot_load.c.o -c /home/lanceb/ktx/src/bot_load.c",
+  "file": "/home/lanceb/ktx/src/bot_load.c",
+  "output": "CMakeFiles/qwprogs.dir/src/bot_load.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/bot_loadmap.c.o -c /home/lanceb/ktx/src/bot_loadmap.c",
+  "file": "/home/lanceb/ktx/src/bot_loadmap.c",
+  "output": "CMakeFiles/qwprogs.dir/src/bot_loadmap.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/bot_match.c.o -c /home/lanceb/ktx/src/bot_match.c",
+  "file": "/home/lanceb/ktx/src/bot_match.c",
+  "output": "CMakeFiles/qwprogs.dir/src/bot_match.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/bot_movement.c.o -c /home/lanceb/ktx/src/bot_movement.c",
+  "file": "/home/lanceb/ktx/src/bot_movement.c",
+  "output": "CMakeFiles/qwprogs.dir/src/bot_movement.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/bot_routing.c.o -c /home/lanceb/ktx/src/bot_routing.c",
+  "file": "/home/lanceb/ktx/src/bot_routing.c",
+  "output": "CMakeFiles/qwprogs.dir/src/bot_routing.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/bot_world.c.o -c /home/lanceb/ktx/src/bot_world.c",
+  "file": "/home/lanceb/ktx/src/bot_world.c",
+  "output": "CMakeFiles/qwprogs.dir/src/bot_world.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/buttons.c.o -c /home/lanceb/ktx/src/buttons.c",
+  "file": "/home/lanceb/ktx/src/buttons.c",
+  "output": "CMakeFiles/qwprogs.dir/src/buttons.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/captain.c.o -c /home/lanceb/ktx/src/captain.c",
+  "file": "/home/lanceb/ktx/src/captain.c",
+  "output": "CMakeFiles/qwprogs.dir/src/captain.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/coach.c.o -c /home/lanceb/ktx/src/coach.c",
+  "file": "/home/lanceb/ktx/src/coach.c",
+  "output": "CMakeFiles/qwprogs.dir/src/coach.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/clan_arena.c.o -c /home/lanceb/ktx/src/clan_arena.c",
+  "file": "/home/lanceb/ktx/src/clan_arena.c",
+  "output": "CMakeFiles/qwprogs.dir/src/clan_arena.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/client.c.o -c /home/lanceb/ktx/src/client.c",
+  "file": "/home/lanceb/ktx/src/client.c",
+  "output": "CMakeFiles/qwprogs.dir/src/client.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/combat.c.o -c /home/lanceb/ktx/src/combat.c",
+  "file": "/home/lanceb/ktx/src/combat.c",
+  "output": "CMakeFiles/qwprogs.dir/src/combat.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/commands.c.o -c /home/lanceb/ktx/src/commands.c",
+  "file": "/home/lanceb/ktx/src/commands.c",
+  "output": "CMakeFiles/qwprogs.dir/src/commands.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/ctf.c.o -c /home/lanceb/ktx/src/ctf.c",
+  "file": "/home/lanceb/ktx/src/ctf.c",
+  "output": "CMakeFiles/qwprogs.dir/src/ctf.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/doors.c.o -c /home/lanceb/ktx/src/doors.c",
+  "file": "/home/lanceb/ktx/src/doors.c",
+  "output": "CMakeFiles/qwprogs.dir/src/doors.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/fb_globals.c.o -c /home/lanceb/ktx/src/fb_globals.c",
+  "file": "/home/lanceb/ktx/src/fb_globals.c",
+  "output": "CMakeFiles/qwprogs.dir/src/fb_globals.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/files.c.o -c /home/lanceb/ktx/src/files.c",
+  "file": "/home/lanceb/ktx/src/files.c",
+  "output": "CMakeFiles/qwprogs.dir/src/files.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/func_bob.c.o -c /home/lanceb/ktx/src/func_bob.c",
+  "file": "/home/lanceb/ktx/src/func_bob.c",
+  "output": "CMakeFiles/qwprogs.dir/src/func_bob.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/func_laser.c.o -c /home/lanceb/ktx/src/func_laser.c",
+  "file": "/home/lanceb/ktx/src/func_laser.c",
+  "output": "CMakeFiles/qwprogs.dir/src/func_laser.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/g_cmd.c.o -c /home/lanceb/ktx/src/g_cmd.c",
+  "file": "/home/lanceb/ktx/src/g_cmd.c",
+  "output": "CMakeFiles/qwprogs.dir/src/g_cmd.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/globals.c.o -c /home/lanceb/ktx/src/globals.c",
+  "file": "/home/lanceb/ktx/src/globals.c",
+  "output": "CMakeFiles/qwprogs.dir/src/globals.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/g_mem.c.o -c /home/lanceb/ktx/src/g_mem.c",
+  "file": "/home/lanceb/ktx/src/g_mem.c",
+  "output": "CMakeFiles/qwprogs.dir/src/g_mem.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/grapple.c.o -c /home/lanceb/ktx/src/grapple.c",
+  "file": "/home/lanceb/ktx/src/grapple.c",
+  "output": "CMakeFiles/qwprogs.dir/src/grapple.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/g_spawn.c.o -c /home/lanceb/ktx/src/g_spawn.c",
+  "file": "/home/lanceb/ktx/src/g_spawn.c",
+  "output": "CMakeFiles/qwprogs.dir/src/g_spawn.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/g_userinfo.c.o -c /home/lanceb/ktx/src/g_userinfo.c",
+  "file": "/home/lanceb/ktx/src/g_userinfo.c",
+  "output": "CMakeFiles/qwprogs.dir/src/g_userinfo.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/g_utils.c.o -c /home/lanceb/ktx/src/g_utils.c",
+  "file": "/home/lanceb/ktx/src/g_utils.c",
+  "output": "CMakeFiles/qwprogs.dir/src/g_utils.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/g_syscalls_extra.c.o -c /home/lanceb/ktx/src/g_syscalls_extra.c",
+  "file": "/home/lanceb/ktx/src/g_syscalls_extra.c",
+  "output": "CMakeFiles/qwprogs.dir/src/g_syscalls_extra.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/hiprot.c.o -c /home/lanceb/ktx/src/hiprot.c",
+  "file": "/home/lanceb/ktx/src/hiprot.c",
+  "output": "CMakeFiles/qwprogs.dir/src/hiprot.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/hoonymode.c.o -c /home/lanceb/ktx/src/hoonymode.c",
+  "file": "/home/lanceb/ktx/src/hoonymode.c",
+  "output": "CMakeFiles/qwprogs.dir/src/hoonymode.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/items.c.o -c /home/lanceb/ktx/src/items.c",
+  "file": "/home/lanceb/ktx/src/items.c",
+  "output": "CMakeFiles/qwprogs.dir/src/items.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/logs.c.o -c /home/lanceb/ktx/src/logs.c",
+  "file": "/home/lanceb/ktx/src/logs.c",
+  "output": "CMakeFiles/qwprogs.dir/src/logs.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/maps.c.o -c /home/lanceb/ktx/src/maps.c",
+  "file": "/home/lanceb/ktx/src/maps.c",
+  "output": "CMakeFiles/qwprogs.dir/src/maps.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/maps_map_amphi2.c.o -c /home/lanceb/ktx/src/maps_map_amphi2.c",
+  "file": "/home/lanceb/ktx/src/maps_map_amphi2.c",
+  "output": "CMakeFiles/qwprogs.dir/src/maps_map_amphi2.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/maps_map_dm3.c.o -c /home/lanceb/ktx/src/maps_map_dm3.c",
+  "file": "/home/lanceb/ktx/src/maps_map_dm3.c",
+  "output": "CMakeFiles/qwprogs.dir/src/maps_map_dm3.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/maps_map_dm4.c.o -c /home/lanceb/ktx/src/maps_map_dm4.c",
+  "file": "/home/lanceb/ktx/src/maps_map_dm4.c",
+  "output": "CMakeFiles/qwprogs.dir/src/maps_map_dm4.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/maps_map_dm6.c.o -c /home/lanceb/ktx/src/maps_map_dm6.c",
+  "file": "/home/lanceb/ktx/src/maps_map_dm6.c",
+  "output": "CMakeFiles/qwprogs.dir/src/maps_map_dm6.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/maps_map_povdmm4.c.o -c /home/lanceb/ktx/src/maps_map_povdmm4.c",
+  "file": "/home/lanceb/ktx/src/maps_map_povdmm4.c",
+  "output": "CMakeFiles/qwprogs.dir/src/maps_map_povdmm4.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/marker_load.c.o -c /home/lanceb/ktx/src/marker_load.c",
+  "file": "/home/lanceb/ktx/src/marker_load.c",
+  "output": "CMakeFiles/qwprogs.dir/src/marker_load.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/marker_util.c.o -c /home/lanceb/ktx/src/marker_util.c",
+  "file": "/home/lanceb/ktx/src/marker_util.c",
+  "output": "CMakeFiles/qwprogs.dir/src/marker_util.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/match.c.o -c /home/lanceb/ktx/src/match.c",
+  "file": "/home/lanceb/ktx/src/match.c",
+  "output": "CMakeFiles/qwprogs.dir/src/match.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/mathlib.c.o -c /home/lanceb/ktx/src/mathlib.c",
+  "file": "/home/lanceb/ktx/src/mathlib.c",
+  "output": "CMakeFiles/qwprogs.dir/src/mathlib.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/misc.c.o -c /home/lanceb/ktx/src/misc.c",
+  "file": "/home/lanceb/ktx/src/misc.c",
+  "output": "CMakeFiles/qwprogs.dir/src/misc.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/motd.c.o -c /home/lanceb/ktx/src/motd.c",
+  "file": "/home/lanceb/ktx/src/motd.c",
+  "output": "CMakeFiles/qwprogs.dir/src/motd.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/plats.c.o -c /home/lanceb/ktx/src/plats.c",
+  "file": "/home/lanceb/ktx/src/plats.c",
+  "output": "CMakeFiles/qwprogs.dir/src/plats.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/player.c.o -c /home/lanceb/ktx/src/player.c",
+  "file": "/home/lanceb/ktx/src/player.c",
+  "output": "CMakeFiles/qwprogs.dir/src/player.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/q_shared.c.o -c /home/lanceb/ktx/src/q_shared.c",
+  "file": "/home/lanceb/ktx/src/q_shared.c",
+  "output": "CMakeFiles/qwprogs.dir/src/q_shared.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/race.c.o -c /home/lanceb/ktx/src/race.c",
+  "file": "/home/lanceb/ktx/src/race.c",
+  "output": "CMakeFiles/qwprogs.dir/src/race.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/rng.c.o -c /home/lanceb/ktx/src/rng.c",
+  "file": "/home/lanceb/ktx/src/rng.c",
+  "output": "CMakeFiles/qwprogs.dir/src/rng.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/rng_gen_impl.c.o -c /home/lanceb/ktx/src/rng_gen_impl.c",
+  "file": "/home/lanceb/ktx/src/rng_gen_impl.c",
+  "output": "CMakeFiles/qwprogs.dir/src/rng_gen_impl.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/rng_seed_impl.c.o -c /home/lanceb/ktx/src/rng_seed_impl.c",
+  "file": "/home/lanceb/ktx/src/rng_seed_impl.c",
+  "output": "CMakeFiles/qwprogs.dir/src/rng_seed_impl.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/route_calc.c.o -c /home/lanceb/ktx/src/route_calc.c",
+  "file": "/home/lanceb/ktx/src/route_calc.c",
+  "output": "CMakeFiles/qwprogs.dir/src/route_calc.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/route_fields.c.o -c /home/lanceb/ktx/src/route_fields.c",
+  "file": "/home/lanceb/ktx/src/route_fields.c",
+  "output": "CMakeFiles/qwprogs.dir/src/route_fields.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/route_lookup.c.o -c /home/lanceb/ktx/src/route_lookup.c",
+  "file": "/home/lanceb/ktx/src/route_lookup.c",
+  "output": "CMakeFiles/qwprogs.dir/src/route_lookup.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/runes.c.o -c /home/lanceb/ktx/src/runes.c",
+  "file": "/home/lanceb/ktx/src/runes.c",
+  "output": "CMakeFiles/qwprogs.dir/src/runes.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/server.c.o -c /home/lanceb/ktx/src/server.c",
+  "file": "/home/lanceb/ktx/src/server.c",
+  "output": "CMakeFiles/qwprogs.dir/src/server.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/sp_ai.c.o -c /home/lanceb/ktx/src/sp_ai.c",
+  "file": "/home/lanceb/ktx/src/sp_ai.c",
+  "output": "CMakeFiles/qwprogs.dir/src/sp_ai.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/sp_boss.c.o -c /home/lanceb/ktx/src/sp_boss.c",
+  "file": "/home/lanceb/ktx/src/sp_boss.c",
+  "output": "CMakeFiles/qwprogs.dir/src/sp_boss.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/sp_client.c.o -c /home/lanceb/ktx/src/sp_client.c",
+  "file": "/home/lanceb/ktx/src/sp_client.c",
+  "output": "CMakeFiles/qwprogs.dir/src/sp_client.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/sp_demon.c.o -c /home/lanceb/ktx/src/sp_demon.c",
+  "file": "/home/lanceb/ktx/src/sp_demon.c",
+  "output": "CMakeFiles/qwprogs.dir/src/sp_demon.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/sp_dog.c.o -c /home/lanceb/ktx/src/sp_dog.c",
+  "file": "/home/lanceb/ktx/src/sp_dog.c",
+  "output": "CMakeFiles/qwprogs.dir/src/sp_dog.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/spectate.c.o -c /home/lanceb/ktx/src/spectate.c",
+  "file": "/home/lanceb/ktx/src/spectate.c",
+  "output": "CMakeFiles/qwprogs.dir/src/spectate.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/sp_enforcer.c.o -c /home/lanceb/ktx/src/sp_enforcer.c",
+  "file": "/home/lanceb/ktx/src/sp_enforcer.c",
+  "output": "CMakeFiles/qwprogs.dir/src/sp_enforcer.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/sp_fish.c.o -c /home/lanceb/ktx/src/sp_fish.c",
+  "file": "/home/lanceb/ktx/src/sp_fish.c",
+  "output": "CMakeFiles/qwprogs.dir/src/sp_fish.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/sp_hknight.c.o -c /home/lanceb/ktx/src/sp_hknight.c",
+  "file": "/home/lanceb/ktx/src/sp_hknight.c",
+  "output": "CMakeFiles/qwprogs.dir/src/sp_hknight.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/sp_knight.c.o -c /home/lanceb/ktx/src/sp_knight.c",
+  "file": "/home/lanceb/ktx/src/sp_knight.c",
+  "output": "CMakeFiles/qwprogs.dir/src/sp_knight.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/sp_monsters.c.o -c /home/lanceb/ktx/src/sp_monsters.c",
+  "file": "/home/lanceb/ktx/src/sp_monsters.c",
+  "output": "CMakeFiles/qwprogs.dir/src/sp_monsters.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/sp_ogre.c.o -c /home/lanceb/ktx/src/sp_ogre.c",
+  "file": "/home/lanceb/ktx/src/sp_ogre.c",
+  "output": "CMakeFiles/qwprogs.dir/src/sp_ogre.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/sp_oldone.c.o -c /home/lanceb/ktx/src/sp_oldone.c",
+  "file": "/home/lanceb/ktx/src/sp_oldone.c",
+  "output": "CMakeFiles/qwprogs.dir/src/sp_oldone.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/sp_shalrath.c.o -c /home/lanceb/ktx/src/sp_shalrath.c",
+  "file": "/home/lanceb/ktx/src/sp_shalrath.c",
+  "output": "CMakeFiles/qwprogs.dir/src/sp_shalrath.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/sp_shambler.c.o -c /home/lanceb/ktx/src/sp_shambler.c",
+  "file": "/home/lanceb/ktx/src/sp_shambler.c",
+  "output": "CMakeFiles/qwprogs.dir/src/sp_shambler.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/sp_soldier.c.o -c /home/lanceb/ktx/src/sp_soldier.c",
+  "file": "/home/lanceb/ktx/src/sp_soldier.c",
+  "output": "CMakeFiles/qwprogs.dir/src/sp_soldier.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/sp_tarbaby.c.o -c /home/lanceb/ktx/src/sp_tarbaby.c",
+  "file": "/home/lanceb/ktx/src/sp_tarbaby.c",
+  "output": "CMakeFiles/qwprogs.dir/src/sp_tarbaby.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/sp_wizard.c.o -c /home/lanceb/ktx/src/sp_wizard.c",
+  "file": "/home/lanceb/ktx/src/sp_wizard.c",
+  "output": "CMakeFiles/qwprogs.dir/src/sp_wizard.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/sp_zombie.c.o -c /home/lanceb/ktx/src/sp_zombie.c",
+  "file": "/home/lanceb/ktx/src/sp_zombie.c",
+  "output": "CMakeFiles/qwprogs.dir/src/sp_zombie.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/stats.c.o -c /home/lanceb/ktx/src/stats.c",
+  "file": "/home/lanceb/ktx/src/stats.c",
+  "output": "CMakeFiles/qwprogs.dir/src/stats.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/statsTables.c.o -c /home/lanceb/ktx/src/statsTables.c",
+  "file": "/home/lanceb/ktx/src/statsTables.c",
+  "output": "CMakeFiles/qwprogs.dir/src/statsTables.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/stats_json.c.o -c /home/lanceb/ktx/src/stats_json.c",
+  "file": "/home/lanceb/ktx/src/stats_json.c",
+  "output": "CMakeFiles/qwprogs.dir/src/stats_json.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/stats_xml.c.o -c /home/lanceb/ktx/src/stats_xml.c",
+  "file": "/home/lanceb/ktx/src/stats_xml.c",
+  "output": "CMakeFiles/qwprogs.dir/src/stats_xml.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/subs.c.o -c /home/lanceb/ktx/src/subs.c",
+  "file": "/home/lanceb/ktx/src/subs.c",
+  "output": "CMakeFiles/qwprogs.dir/src/subs.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/teamplay.c.o -c /home/lanceb/ktx/src/teamplay.c",
+  "file": "/home/lanceb/ktx/src/teamplay.c",
+  "output": "CMakeFiles/qwprogs.dir/src/teamplay.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/triggers.c.o -c /home/lanceb/ktx/src/triggers.c",
+  "file": "/home/lanceb/ktx/src/triggers.c",
+  "output": "CMakeFiles/qwprogs.dir/src/triggers.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/vip.c.o -c /home/lanceb/ktx/src/vip.c",
+  "file": "/home/lanceb/ktx/src/vip.c",
+  "output": "CMakeFiles/qwprogs.dir/src/vip.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/vote.c.o -c /home/lanceb/ktx/src/vote.c",
+  "file": "/home/lanceb/ktx/src/vote.c",
+  "output": "CMakeFiles/qwprogs.dir/src/vote.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/weapons.c.o -c /home/lanceb/ktx/src/weapons.c",
+  "file": "/home/lanceb/ktx/src/weapons.c",
+  "output": "CMakeFiles/qwprogs.dir/src/weapons.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/world.c.o -c /home/lanceb/ktx/src/world.c",
+  "file": "/home/lanceb/ktx/src/world.c",
+  "output": "CMakeFiles/qwprogs.dir/src/world.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/g_syscalls.c.o -c /home/lanceb/ktx/src/g_syscalls.c",
+  "file": "/home/lanceb/ktx/src/g_syscalls.c",
+  "output": "CMakeFiles/qwprogs.dir/src/g_syscalls.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build",
+  "command": "/usr/bin/cc -DBOT_SUPPORT=1 -Dqwprogs_EXPORTS -I/home/lanceb/ktx/include -fPIC -fvisibility=hidden -fdiagnostics-color=always -Wall -Werror=strict-prototypes -o CMakeFiles/qwprogs.dir/src/native_lib.c.o -c /home/lanceb/ktx/src/native_lib.c",
+  "file": "/home/lanceb/ktx/src/native_lib.c",
+  "output": "CMakeFiles/qwprogs.dir/src/native_lib.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build/tools/q3asm",
+  "command": "/usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/q3asm.dir/q3asm.c.o -c /home/lanceb/ktx/tools/q3asm/q3asm.c",
+  "file": "/home/lanceb/ktx/tools/q3asm/q3asm.c",
+  "output": "tools/q3asm/CMakeFiles/q3asm.dir/q3asm.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build/tools/q3asm",
+  "command": "/usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/q3asm.dir/q3vm.c.o -c /home/lanceb/ktx/tools/q3asm/q3vm.c",
+  "file": "/home/lanceb/ktx/tools/q3asm/q3vm.c",
+  "output": "tools/q3asm/CMakeFiles/q3asm.dir/q3vm.c.o"
+},
+{
+  "directory": "/home/lanceb/ktx/build/tools/q3asm",
+  "command": "/usr/bin/cc   -fdiagnostics-color=always -o CMakeFiles/q3asm.dir/cmdlib.c.o -c /home/lanceb/ktx/tools/q3asm/cmdlib.c",
+  "file": "/home/lanceb/ktx/tools/q3asm/cmdlib.c",
+  "output": "tools/q3asm/CMakeFiles/q3asm.dir/cmdlib.c.o"
+}
+]
