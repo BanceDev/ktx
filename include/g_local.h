@@ -886,6 +886,7 @@ void CA_spectator_think(void);
 void CA_Frame(void);
 void CA_PutClientInServer(void);
 void FT_PlayerFreeze(void);
+void FT_PlayerUnfreeze(void);
 qbool CA_can_fire(gedict_t *p);
 
 // captain.c

@@ -405,9 +405,20 @@ void ClanArenaTrackingToggleButton(void) {
 }
 
 void FT_PlayerFreeze(void) {
-	G_bprint(2, "\n%s", redtext("Logging death freeze..."));
 	self->s.v.movetype = MOVETYPE_NONE;
 	self->in_freeze = true;
+	self->touch = (func_t)FT_PlayerUnfreeze;
+	self->s.v.items =
+		(int)self->s.v.items | (IT_QUAD | IT_INVULNERABILITY | IT_SUIT);
+}
+
+void FT_PlayerUnfreeze(void) {
+	if (other->s.v.team != self->s.v.team) {
+		return;
+	}
+
+	self->in_freeze = false;
+	k_respawn(self, true);
 }
 
 void CA_PutClientInServer(void) {
