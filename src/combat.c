@@ -50,6 +50,11 @@ qbool ISLIVE(gedict_t *e) {
 		return false;
 	}
 
+	// handle frezze tag
+	if (isCA() && cvar("k_clan_arena") == 3 && e->in_freeze) {
+		return false;
+	}
+
 	if (e->ct == ctPlayer) {
 		return ((e->s.v.health > 0) && e->ca_alive);
 	}
@@ -241,8 +246,8 @@ void Frozen(gedict_t *targ, gedict_t *attacker, gedict_t *inflictor) {
 	oself = self;
 	self = targ;
 
-	if (self->s.v.health < -99) {
-		self->s.v.health = -99; // don't let sbar look bad if a player
+	if (self->s.v.health <= 0) {
+		self->s.v.health = 1; // don't let sbar look bad if a player
 	}
 
 	// self->dead_time = g_globalvars.time;

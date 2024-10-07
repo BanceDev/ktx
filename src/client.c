@@ -958,7 +958,7 @@ gedict_t *Sub_SelectSpawnPoint(char *spawnname) {
 				  (match_in_progress == 2) &&
 				  (thing->k_1spawn < g_globalvars.time))) {
 				//				G_bprint(2, "ignore player: %s\n",
-				//thing->netname);
+				// thing->netname);
 				pcount++; // ignore spot
 			}
 		}
@@ -994,7 +994,7 @@ gedict_t *Sub_SelectSpawnPoint(char *spawnname) {
 		// ack, they are all full, just pick one at random
 
 		//		G_bprint (PRINT_HIGH, "%s\n", "Ackk! All spots are full.
-		//Selecting random spawn spot");
+		// Selecting random spawn spot");
 
 		if (!(spot = find_idx(i_rnd(0, totalspots - 1), FOFCLSN, spawnname))) {
 			totalspots = 1; // proper count is not so important, something going
@@ -1621,6 +1621,9 @@ void PutClientInServer(void) {
 	self->ctf_flag = 0;
 
 	self->invincible_time = 0;
+
+	// freeze tag
+	self->in_freeze = false;
 
 	DecodeLevelParms();
 
@@ -3548,7 +3551,9 @@ void CheckLightEffects(void) {
 		cvar("k_sready") && !isRACE()) {
 		b = true;
 	}
-
+	if (self->in_freeze) {
+		r = g = b = true;
+	}
 	// apply all EF_xxx
 
 	if (dim) {
@@ -4104,11 +4109,11 @@ void StatsHandler(gedict_t *targ, gedict_t *attacker) {
 		// FIXME: We should want to consider other times when control switches.
 		// Some ideas:
 		//	- if one player gets a much larger stack (Mega + RA) we can probably
-		//assume 	  they have taken control. This could be detected on Mega / RA
-		//pickup.
+		// assume 	  they have taken control. This could be detected on Mega /
+		// RA pickup.
 		//	- if one player takes RA multiple times in a row, they may indicate
-		//they 	  have won control but not yet killed the opponent, or opponent is
-		//hiding. 	This could be detected on RA pickup.
+		// they 	  have won control but not yet killed the opponent, or
+		// opponent is hiding. 	This could be detected on RA pickup.
 	}
 
 	if (attacker->ct == ctPlayer) {

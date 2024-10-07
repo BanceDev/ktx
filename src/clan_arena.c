@@ -406,7 +406,7 @@ void ClanArenaTrackingToggleButton(void) {
 
 void FT_PlayerFreeze(void) {
 	G_bprint(2, "\n%s", redtext("Logging death freeze..."));
-	self->s.v.movetype = MOVETYPE_BOUNCE;
+	self->s.v.movetype = MOVETYPE_NONE;
 	self->in_freeze = true;
 }
 
