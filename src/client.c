@@ -3552,7 +3552,7 @@ void CheckLightEffects(void) {
 		b = true;
 	}
 	if (self->in_freeze) {
-		r = g = b = true;
+		r = g = b = dim = true;
 	}
 	// apply all EF_xxx
 

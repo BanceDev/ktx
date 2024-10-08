@@ -846,7 +846,9 @@ static void SM_PrepareClients(void) {
 
 		// ignore k_respawn() in case of CA
 		if (isCA()) {
-			continue;
+			if (cvar("k_clan_arena") != 3) {
+				continue;
+			}
 		}
 
 		// ignore k_respawn() in case of race mode

@@ -29,18 +29,12 @@
  QuakeEd only writes a single float for angles (bad idea), so up and down are
  just constant angles.
  */
-void SetMovedir(void)
-{
-	if (VectorCompareF(self->s.v.angles, 0, -1, 0))
-	{
+void SetMovedir(void) {
+	if (VectorCompareF(self->s.v.angles, 0, -1, 0)) {
 		SetVector(self->s.v.movedir, 0, 0, 1);
-	}
-	else if (VectorCompareF(self->s.v.angles, 0, -2, 0))
-	{
+	} else if (VectorCompareF(self->s.v.angles, 0, -2, 0)) {
 		SetVector(self->s.v.movedir, 0, 0, -1);
-	}
-	else
-	{
+	} else {
 		trap_makevectors(self->s.v.angles);
 		VectorCopy(g_globalvars.v_forward, self->s.v.movedir);
 	}
@@ -53,17 +47,15 @@ void SetMovedir(void)
  InitTrigger
  ================
  */
-void InitTrigger(void)
-{
-// trigger angles are used for one-way touches.  An angle of 0 is assumed
-// to mean no restrictions, so use a yaw of 360 instead.
-	if (!VectorCompareF(self->s.v.angles, 0, 0, 0))
-	{
+void InitTrigger(void) {
+	// trigger angles are used for one-way touches.  An angle of 0 is assumed
+	// to mean no restrictions, so use a yaw of 360 instead.
+	if (!VectorCompareF(self->s.v.angles, 0, 0, 0)) {
 		SetMovedir();
 	}
 
 	self->s.v.solid = SOLID_TRIGGER;
-	setmodel(self, self->model);	// set size and link into world
+	setmodel(self, self->model); // set size and link into world
 	self->s.v.movetype = MOVETYPE_NONE;
 	self->s.v.modelindex = 0;
 	self->model = "";
@@ -78,8 +70,8 @@ void InitTrigger(void)
  ===============
  */
 void SUB_CalcMoveDone(void);
-void SUB_CalcMoveEnt(gedict_t *ent, vec3_t tdest, float tspeed, void (*func)(void))
-{
+void SUB_CalcMoveEnt(gedict_t *ent, vec3_t tdest, float tspeed,
+					 void (*func)(void)) {
 	gedict_t *stemp;
 
 	stemp = self;
@@ -89,47 +81,43 @@ void SUB_CalcMoveEnt(gedict_t *ent, vec3_t tdest, float tspeed, void (*func)(voi
 	self = stemp;
 }
 
-void SUB_CalcMove(vec3_t tdest, float tspeed, void (*func)(void))
-{
+void SUB_CalcMove(vec3_t tdest, float tspeed, void (*func)(void)) {
 	vec3_t vdestdelta;
 	float len, traveltime;
 
-	if (!tspeed)
-	{
+	if (!tspeed) {
 		G_Error("No speed is defined!");
 	}
 
 	self->think1 = func;
 	VectorCopy(tdest, self->finaldest);
-	self->think = (func_t) SUB_CalcMoveDone;
+	self->think = (func_t)SUB_CalcMoveDone;
 
-	if (VectorCompare(tdest, self->s.v.origin))
-	{
+	if (VectorCompare(tdest, self->s.v.origin)) {
 		SetVector(self->s.v.velocity, 0, 0, 0);
 		self->s.v.nextthink = self->s.v.ltime + 0.1;
 
 		return;
 	}
 
-// set destdelta to the vector needed to move
+	// set destdelta to the vector needed to move
 	VectorSubtract(tdest, self->s.v.origin, vdestdelta)
-// calculate length of vector
-	len = vlen(vdestdelta);
+		// calculate length of vector
+		len = vlen(vdestdelta);
 
-// divide by speed to get time to reach dest
+	// divide by speed to get time to reach dest
 	traveltime = len / tspeed;
 
-	if (traveltime < 0.03)
-	{
+	if (traveltime < 0.03) {
 		traveltime = 0.03;
 	}
 
-// set nextthink to trigger a think when dest is reached
+	// set nextthink to trigger a think when dest is reached
 	self->s.v.nextthink = self->s.v.ltime + traveltime;
 
-// scale the destdelta vector by the time spent traveling to get velocity
+	// scale the destdelta vector by the time spent traveling to get velocity
 	VectorScale(vdestdelta, (1 / traveltime), self->s.v.velocity);
-	//self.velocity = vdestdelta * (1/traveltime); // qcc won't take vec/float 
+	// self.velocity = vdestdelta * (1/traveltime); // qcc won't take vec/float
 }
 
 /*
@@ -137,14 +125,12 @@ void SUB_CalcMove(vec3_t tdest, float tspeed, void (*func)(void))
  After moving, set origin to exact final destination
  ============
  */
-void SUB_CalcMoveDone(void)
-{
+void SUB_CalcMoveDone(void) {
 	setorigin(self, PASSVEC3(self->finaldest));
 
 	SetVector(self->s.v.velocity, 0, 0, 0);
-	//self->s.v.nextthink = -1;
-	if (self->think1)
-	{
+	// self->s.v.nextthink = -1;
+	if (self->think1) {
 		self->think1();
 	}
 }
@@ -159,7 +145,8 @@ void SUB_CalcMoveDone(void)
  The calling function should make sure self.think is valid
  ===============
  */
-/*void(entity ent, vector destangle, float tspeed, void() func) SUB_CalcAngleMoveEnt =
+/*void(entity ent, vector destangle, float tspeed, void() func)
+ SUB_CalcAngleMoveEnt =
  {
  local entity  stemp;
  stemp = self;
@@ -178,10 +165,10 @@ void SUB_CalcMoveDone(void)
 
  // set destdelta to the vector needed to move
  destdelta = destangle - self.angles;
- 
+
  // calculate length of vector
  len = vlen (destdelta);
- 
+
  // divide by speed to get time to reach dest
  traveltime = len / tspeed;
 
@@ -190,7 +177,7 @@ void SUB_CalcMoveDone(void)
 
  // scale the destdelta vector by the time spent traveling to get velocity
  self.avelocity = destdelta * (1 / traveltime);
- 
+
  self.think1 = func;
  self.finalangle = destangle;
  self.think = SUB_CalcAngleMoveDone;
@@ -204,7 +191,7 @@ void SUB_CalcMoveDone(void)
 /*void SUB_CalcAngleMoveDone(gedict_t*self)
  {
 
- VectorCopy(self->finalangle,self->s.v.angles ); 
+ VectorCopy(self->finalangle,self->s.v.angles );
  SetVector(self->s.v.avelocity,0,0,0);
  self->s.v.nextthink = -1;
  if (self->think1)
@@ -215,8 +202,7 @@ void SUB_CalcMoveDone(void)
 void SUB_UseTargets(void);
 gedict_t *activator;
 
-void DelayThink(void)
-{
+void DelayThink(void) {
 	activator = PROG_TO_EDICT(self->s.v.enemy);
 
 	SUB_UseTargets();
@@ -242,20 +228,18 @@ void DelayThink(void)
 
  ==============================
  */
-void SUB_UseTargets(void)
-{
+void SUB_UseTargets(void) {
 	gedict_t *t, *stemp, *otemp, *act;
 
-//
-// check for a delay
-//
-	if (self->delay)
-	{
+	//
+	// check for a delay
+	//
+	if (self->delay) {
 		// create a temp object to fire at a later time
 		t = spawn();
 		t->classname = "DelayedUse";
 		t->s.v.nextthink = g_globalvars.time + self->delay;
-		t->think = (func_t) DelayThink;
+		t->think = (func_t)DelayThink;
 		t->s.v.enemy = EDICT_TO_PROG(activator);
 		t->message = self->message;
 		t->killtarget = self->killtarget;
@@ -264,49 +248,40 @@ void SUB_UseTargets(void)
 		return;
 	}
 
-//
-// print the message
-//activator->classname && 
-	if ((activator->ct == ctPlayer) && self->message)
-	{
-		if (strneq(self->message, ""))
-		{
+	//
+	// print the message
+	// activator->classname &&
+	if ((activator->ct == ctPlayer) && self->message) {
+		if (strneq(self->message, "")) {
 			G_centerprint(activator, "%s", self->message);
-			if (!self->noise)
-			{
+			if (!self->noise) {
 				sound(activator, CHAN_VOICE, "misc/talk.wav", 1, ATTN_NORM);
 			}
 		}
 	}
-//
-// kill the killtagets
-//
-	if (self->killtarget)
-	{
+	//
+	// kill the killtagets
+	//
+	if (self->killtarget) {
 		t = world;
-		do
-		{
+		do {
 			t = find(t, FOFS(targetname), self->killtarget);
-			if (!t)
-			{
+			if (!t) {
 				return;
 			}
 
 			ent_remove(t);
 		} while (1);
 	}
-//
-// fire targets
-//
-	if (self->target)
-	{
+	//
+	// fire targets
+	//
+	if (self->target) {
 		act = activator;
 		t = world;
-		do
-		{
+		do {
 			t = find(t, FOFS(targetname), self->target);
-			if (!t)
-			{
+			if (!t) {
 				return;
 			}
 
@@ -314,10 +289,9 @@ void SUB_UseTargets(void)
 			otemp = other;
 			self = t;
 			other = stemp;
-			//if (self.use != SUB_Null)
+			// if (self.use != SUB_Null)
 			{
-				if (self->use)
-				{
+				if (self->use) {
 					((void (*)(void))(self->use))();
 				}
 			}
@@ -327,5 +301,4 @@ void SUB_UseTargets(void)
 			activator = act;
 		} while (1);
 	}
-
 }

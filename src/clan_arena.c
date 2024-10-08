@@ -210,6 +210,8 @@ qbool CA_CheckAlive(gedict_t *p) {
 	if (p) {
 		if (!match_in_progress) {
 			return true;
+		} else if (!self->in_freeze) {
+			return true;
 		} else if (!p->ca_ready && !match_over) {
 			return false;
 		} else if (ra_match_fight != 2 || p->in_limbo) {
@@ -405,20 +407,26 @@ void ClanArenaTrackingToggleButton(void) {
 }
 
 void FT_PlayerFreeze(void) {
-	self->s.v.movetype = MOVETYPE_NONE;
+	self->s.v.movetype = MOVETYPE_TOSS;
 	self->in_freeze = true;
+	self->ca_alive = false;
 	self->touch = (func_t)FT_PlayerUnfreeze;
 	self->s.v.items =
 		(int)self->s.v.items | (IT_QUAD | IT_INVULNERABILITY | IT_SUIT);
 }
 
 void FT_PlayerUnfreeze(void) {
-	if (other->s.v.team != self->s.v.team) {
+	if (!self->in_freeze) {
+		return;
+	}
+
+	if (!SameTeam(self, other)) {
 		return;
 	}
 
 	self->in_freeze = false;
-	k_respawn(self, true);
+	self->touch = (func_t)SUB_Null;
+	k_respawn(self, false);
 }
 
 void CA_PutClientInServer(void) {
@@ -508,7 +516,7 @@ void CA_PutClientInServer(void) {
 	}
 
 	// set to ghost if dead
-	if (ISDEAD(self)) {
+	if (ISDEAD(self) && cvar("k_clan_arena") != 3) {
 		int max_deaths = cvar("k_clan_arena_max_respawns");
 
 		self->s.v.solid = SOLID_NOT;
@@ -1140,7 +1148,18 @@ void CA_player_pre_think(void) {
 
 		// Set this player to solid so we trigger checkpoints & teleports during
 		// move
-		self->s.v.solid = (ISDEAD(self) ? SOLID_NOT : SOLID_SLIDEBOX);
+		if (cvar("k_clan_arena") == 3) {
+			self->s.v.solid = SOLID_SLIDEBOX;
+		} else {
+			self->s.v.solid = (ISDEAD(self) ? SOLID_NOT : SOLID_SLIDEBOX);
+		}
+		if (self->in_freeze) {
+			// G_bprint(2, "\n%s", redtext("hi i am a frozen player..."));
+			if ((int)self->s.v.flags & FL_ONGROUND) {
+				self->s.v.movetype = MOVETYPE_NONE;
+			}
+			player_stand1();
+		}
 
 		if ((self->s.v.mins[0] == 0) || (self->s.v.mins[1] == 0)) {
 			// This can happen if the world 'squashes' a SOLID_NOT entity, mvdsv
@@ -1264,7 +1283,6 @@ void CA_Frame(void) {
 		for (p = world; (p = find_plr(p));) {
 			last_alive = (int)ceil(last_alive_time(p));
 			e_last_alive = (int)ceil(enemy_last_alive_time(p));
-
 			if (p->in_limbo) {
 				if (!p->spawn_delay) {
 					int delay = calc_respawn_time(p, 0);
