@@ -3559,8 +3559,7 @@ void CheckLightEffects(void) {
 			if (self->thaw_pulsetime < g_globalvars.time) {
 				self->thaw_pulse_on = !self->thaw_pulse_on;
 				stuffcmd(self, "bf\n");
-				sound(self, CHAN_AUTO, "items/damage2.wav", 1, ATTN_NORM);
-				self->thaw_pulsetime = g_globalvars.time + 0.5f;
+				self->thaw_pulsetime = g_globalvars.time + 0.3f;
 			}
 		}
 	}
