@@ -246,8 +246,9 @@ void Frozen(gedict_t *targ, gedict_t *attacker, gedict_t *inflictor) {
 	oself = self;
 	self = targ;
 
+	// keep client from doing the cringe
 	if (self->s.v.health <= 0) {
-		self->s.v.health = 1; // don't let sbar look bad if a player
+		self->s.v.health = 1;
 	}
 
 	// self->dead_time = g_globalvars.time;
@@ -255,10 +256,6 @@ void Frozen(gedict_t *targ, gedict_t *attacker, gedict_t *inflictor) {
 	self->s.v.enemy = EDICT_TO_PROG(attacker);
 
 	ClientObituary(self, attacker);
-
-	self->s.v.takedamage = DAMAGE_NO;
-	self->touch = (func_t)SUB_Null; // probably will have to change
-	self->s.v.effects = 0;
 
 	if (self->th_die) {
 		self->th_die();
@@ -467,9 +464,17 @@ void T_Damage(gedict_t *targ, gedict_t *inflictor, gedict_t *attacker,
 
 	attackerteam = getteam(attacker);
 	targteam = getteam(targ);
-
 	// can't apply damage to dead
 	if (!targ->s.v.takedamage || ISDEAD(targ)) {
+		// can apply to thawing
+		if (targ->in_thaw) {
+			// if player is frozen and damaged by an enemy reset thaw
+			if (!SameTeam(targ, attacker)) {
+				G_bprint(2, "\n%s", redtext("hi i am touched while froze..."));
+				targ->touch = (func_t)FT_PlayerUnfreeze;
+				targ->in_thaw = false;
+			}
+		}
 		return;
 	}
 

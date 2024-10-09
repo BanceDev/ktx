@@ -3,6 +3,7 @@
 //
 
 #include "g_local.h"
+#include "q_shared.h"
 
 static int round_num;
 static int team1_score;
@@ -407,7 +408,10 @@ void ClanArenaTrackingToggleButton(void) {
 }
 
 void FT_PlayerFreeze(void) {
-	self->s.v.movetype = MOVETYPE_TOSS;
+	if (ENVDEATH(self)) {
+		k_respawn(self, false);
+	}
+	self->s.v.movetype = MOVETYPE_NONE;
 	self->in_freeze = true;
 	self->ca_alive = false;
 	self->touch = (func_t)FT_PlayerUnfreeze;
@@ -424,8 +428,13 @@ void FT_PlayerUnfreeze(void) {
 		return;
 	}
 
-	self->in_freeze = false;
+	self->in_thaw = true;
+	self->thawtime = g_globalvars.time;
 	self->touch = (func_t)SUB_Null;
+}
+
+void FT_PlayerThaw(void) {
+	self->in_freeze = false;
 	k_respawn(self, false);
 }
 
@@ -483,6 +492,7 @@ void CA_PutClientInServer(void) {
 		self->in_play = true;
 		self->in_limbo = false;
 		self->in_freeze = false;
+		self->in_thaw = false;
 
 		if (!self->teamcolor && self->ca_ready) {
 			// if your team is "red" or "blue", set color to match
@@ -1155,82 +1165,78 @@ void CA_player_pre_think(void) {
 		}
 		if (self->in_freeze) {
 			// G_bprint(2, "\n%s", redtext("hi i am a frozen player..."));
-			if ((int)self->s.v.flags & FL_ONGROUND) {
-				self->s.v.movetype = MOVETYPE_NONE;
-			}
 			player_stand1();
-		}
-
-		if ((self->s.v.mins[0] == 0) || (self->s.v.mins[1] == 0)) {
-			// This can happen if the world 'squashes' a SOLID_NOT entity, mvdsv
-			// will turn into corpse
-			setsize(self, PASSVEC3(VEC_HULL_MIN), PASSVEC3(VEC_HULL_MAX));
-		}
-
-		setorigin(self, PASSVEC3(self->s.v.origin));
-
-		if ((self->ct == ctPlayer) && (ISDEAD(self) || !self->in_play)) {
-			if (self->tracking_enabled) {
-				if (self->s.v.button2) {
-					if (((int)(self->s.v.flags)) & FL_JUMPRELEASED) {
-						self->s.v.flags =
-							(int)self->s.v.flags & ~FL_JUMPRELEASED;
-
-						track_player_next(self);
-					}
-				} else {
-					self->s.v.flags =
-						((int)(self->s.v.flags)) | FL_JUMPRELEASED;
-				}
+			if (self->in_thaw && (g_globalvars.time - self->thawtime >= 3)) {
+				FT_PlayerThaw();
 			}
 		}
+	}
 
-		if (self->ct == ctPlayer && ra_match_fight && !self->in_play) {
-			track_player(self); // enable tracking by default while dead
-		}
+	if ((self->s.v.mins[0] == 0) || (self->s.v.mins[1] == 0)) {
+		// This can happen if the world 'squashes' a SOLID_NOT entity, mvdsv
+		// will turn into corpse
+		setsize(self, PASSVEC3(VEC_HULL_MIN), PASSVEC3(VEC_HULL_MAX));
+	}
 
-		if (self->in_play) {
-			self->alive_time = g_globalvars.time - self->time_of_respawn;
-		}
+	setorigin(self, PASSVEC3(self->s.v.origin));
 
-		// take no damage to health/armor within 1 second of respawn or during
-		// endround
-		if (self->in_play && ((self->alive_time >= 1) || !self->round_deaths) &&
-			!ca_round_pause) {
-			self->no_pain = false;
-		} else {
-			self->no_pain = true;
-		}
+	if ((self->ct == ctPlayer) && (ISDEAD(self) || !self->in_play)) {
+		if (self->tracking_enabled) {
+			if (self->s.v.button2) {
+				if (((int)(self->s.v.flags)) & FL_JUMPRELEASED) {
+					self->s.v.flags = (int)self->s.v.flags & ~FL_JUMPRELEASED;
 
-		self->s.v.effects =
-			(int)self->s.v.effects | (EF_GREEN | EF_RED | EF_BLUE);
+					track_player_next(self);
+				}
+			} else {
+				self->s.v.flags = ((int)(self->s.v.flags)) | FL_JUMPRELEASED;
+			}
+		}
+	}
 
-		// players can't change their color
-		if (self->teamcolor &&
-			(self->in_play || (!ca_round_pause && self->in_limbo)) &&
-			(strneq(ezinfokey(self, "topcolor"), self->teamcolor) ||
-			 strneq(ezinfokey(self, "bottomcolor"), self->teamcolor))) {
-			SetUserInfo(self, "topcolor", self->teamcolor, 0);
-			SetUserInfo(self, "bottomcolor", self->teamcolor, 0);
-		}
-		// perma-dead players can't change their color
-		else if (self->teamcolor && !self->in_play &&
-				 (!self->in_limbo || !self->can_respawn || ca_round_pause) &&
-				 (strneq(ezinfokey(self, "topcolor"), "0") ||
-				  strneq(ezinfokey(self, "bottomcolor"), "0"))) {
-			SetUserInfo(self, "topcolor", "0", 0);
-			SetUserInfo(self, "bottomcolor", "0", 0);
-		}
-		// players who aren't in the game must be white and have no team
-		else if (!self->teamcolor && !self->ca_ready &&
-				 (match_in_progress == 2) &&
-				 (strneq(ezinfokey(self, "topcolor"), "0") ||
-				  strneq(ezinfokey(self, "bottomcolor"), "0") ||
-				  strneq(ezinfokey(self, "team"), ""))) {
-			SetUserInfo(self, "topcolor", "0", 0);
-			SetUserInfo(self, "bottomcolor", "0", 0);
-			SetUserInfo(self, "team", "", 0);
-		}
+	if (self->ct == ctPlayer && ra_match_fight && !self->in_play) {
+		track_player(self); // enable tracking by default while dead
+	}
+
+	if (self->in_play) {
+		self->alive_time = g_globalvars.time - self->time_of_respawn;
+	}
+
+	// take no damage to health/armor within 1 second of respawn or during
+	// endround
+	if (self->in_play && ((self->alive_time >= 1) || !self->round_deaths) &&
+		!ca_round_pause) {
+		self->no_pain = false;
+	} else {
+		self->no_pain = true;
+	}
+
+	self->s.v.effects = (int)self->s.v.effects | (EF_GREEN | EF_RED | EF_BLUE);
+
+	// players can't change their color
+	if (self->teamcolor &&
+		(self->in_play || (!ca_round_pause && self->in_limbo)) &&
+		(strneq(ezinfokey(self, "topcolor"), self->teamcolor) ||
+		 strneq(ezinfokey(self, "bottomcolor"), self->teamcolor))) {
+		SetUserInfo(self, "topcolor", self->teamcolor, 0);
+		SetUserInfo(self, "bottomcolor", self->teamcolor, 0);
+	}
+	// perma-dead players can't change their color
+	else if (self->teamcolor && !self->in_play &&
+			 (!self->in_limbo || !self->can_respawn || ca_round_pause) &&
+			 (strneq(ezinfokey(self, "topcolor"), "0") ||
+			  strneq(ezinfokey(self, "bottomcolor"), "0"))) {
+		SetUserInfo(self, "topcolor", "0", 0);
+		SetUserInfo(self, "bottomcolor", "0", 0);
+	}
+	// players who aren't in the game must be white and have no team
+	else if (!self->teamcolor && !self->ca_ready && (match_in_progress == 2) &&
+			 (strneq(ezinfokey(self, "topcolor"), "0") ||
+			  strneq(ezinfokey(self, "bottomcolor"), "0") ||
+			  strneq(ezinfokey(self, "team"), ""))) {
+		SetUserInfo(self, "topcolor", "0", 0);
+		SetUserInfo(self, "bottomcolor", "0", 0);
+		SetUserInfo(self, "team", "", 0);
 	}
 }
 

@@ -606,6 +606,7 @@ void spawn_tfog(vec3_t org);
 void teleport_player(gedict_t *player, vec3_t origin, vec3_t angles, int flags);
 
 #define TELEDEATH(e) ((e)->deathtype == dtTELE1 || (e)->deathtype == dtTELE2 || (e)->deathtype == dtTELE3)
+#define ENVDEATH(e) ((e)->deathtype == dtTELE1 || (e)->deathtype == dtTELE2 || (e)->deathtype == dtTELE3 || (e)->deathtype == dtWATER_DMG || (e)->deathtype == dtLAVA_DMG || (e)->deathtype == dtSLIME_DMG || (e)->deathtype == dtSUICIDE)
 
 // runes.c
 void DropRune(void);
@@ -887,6 +888,7 @@ void CA_Frame(void);
 void CA_PutClientInServer(void);
 void FT_PlayerFreeze(void);
 void FT_PlayerUnfreeze(void);
+void FT_PlayerThaw(void);
 qbool CA_can_fire(gedict_t *p);
 
 // captain.c
