@@ -410,6 +410,9 @@ void ClanArenaTrackingToggleButton(void) {
 void FT_PlayerFreeze(void) {
 	if (ENVDEATH(self)) {
 		k_respawn(self, false);
+		if (match_in_progress == 0) { // dont freeze in prewar
+			return;
+		}
 	}
 	self->s.v.movetype = MOVETYPE_NONE;
 	self->in_freeze = true;
@@ -430,6 +433,8 @@ void FT_PlayerUnfreeze(void) {
 
 	self->in_thaw = true;
 	self->thawtime = g_globalvars.time;
+	self->thaw_pulsetime = g_globalvars.time;
+	self->thaw_pulse_on = true;
 	self->touch = (func_t)SUB_Null;
 }
 
@@ -1164,10 +1169,11 @@ void CA_player_pre_think(void) {
 			self->s.v.solid = (ISDEAD(self) ? SOLID_NOT : SOLID_SLIDEBOX);
 		}
 		if (self->in_freeze) {
-			// G_bprint(2, "\n%s", redtext("hi i am a frozen player..."));
 			player_stand1();
-			if (self->in_thaw && (g_globalvars.time - self->thawtime >= 3)) {
-				FT_PlayerThaw();
+			if (self->in_thaw) {
+				if (g_globalvars.time - self->thawtime >= 3) {
+					FT_PlayerThaw();
+				}
 			}
 		}
 	}

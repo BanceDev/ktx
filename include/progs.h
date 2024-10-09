@@ -1057,6 +1057,8 @@ typedef struct gedict_s
 	qbool in_freeze;						// waiting to be unfrozen in freeze tag
 	qbool in_thaw;							// in the 3 second thaw phase
 	float thawtime;							// time in which thaw is initiated
+	float thaw_pulsetime;
+	qbool thaw_pulse_on;
 	qbool last_alive_active;				// if last alive timer is active
 	qbool no_pain;							// if player can take any damage to health or armor
 	float ca_round_frags;
