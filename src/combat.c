@@ -237,11 +237,9 @@ qbool CanDamage(gedict_t *targ, gedict_t *inflictor) {
 void Frozen(gedict_t *targ, gedict_t *attacker, gedict_t *inflictor) {
 	gedict_t *oself;
 
-	/*
-	#ifdef BOT_SUPPORT
-		BotPlayerKilledEvent(targ, attacker, inflictor);
-	#endif
-	*/
+#ifdef BOT_SUPPORT
+	BotPlayerKilledEvent(targ, attacker, inflictor);
+#endif
 
 	oself = self;
 	self = targ;

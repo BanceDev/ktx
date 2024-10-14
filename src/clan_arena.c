@@ -408,6 +408,9 @@ void ClanArenaTrackingToggleButton(void) {
 }
 
 void FT_PlayerFreeze(void) {
+#ifdef BOT_SUPPORT
+	BotPlayerDeathEvent(self);
+#endif
 	if (ENVDEATH(self)) {
 		k_respawn(self, false);
 		if (match_in_progress == 0) { // dont freeze in prewar
@@ -439,8 +442,10 @@ void FT_PlayerUnfreeze(void) {
 }
 
 void FT_PlayerThaw(void) {
-	self->in_freeze = false;
-	k_respawn(self, false);
+	if (!ft_round_over) {
+		self->in_freeze = false;
+		k_respawn(self, false);
+	}
 }
 
 void CA_PutClientInServer(void) {
@@ -993,6 +998,7 @@ void EndRound(int alive_team) {
 	gedict_t *p;
 	static int last_count;
 	char round_or_series[10] = "";
+	ft_round_over = true;
 
 	if (!ca_round_pause) {
 		ca_round_pause = 1;
@@ -1054,7 +1060,8 @@ void EndRound(int alive_team) {
 				G_cp2all(" "); // clear any centerprint from during the round
 
 				for (p = world; (p = find_plr(p));) {
-					if (cvar("k_clan_arena") == 2) {
+					if (cvar("k_clan_arena") == 2 ||
+						cvar("k_clan_arena") == 3) {
 						if (alive_team &&
 							streq(getteam(p),
 								  cvar_string(va("_k_team%d", alive_team)))) {
@@ -1439,6 +1446,7 @@ void CA_Frame(void) {
 
 			G_cp2all("%s", "FIGHT!");
 
+			ft_round_over = false; // reset for freeze tag
 			ra_match_fight = 2;
 
 			// rounding suck, so this force readytostart() return true right

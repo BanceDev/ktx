@@ -1090,6 +1090,7 @@ extern int ra_match_fight;	// have winner and loser fighting
 // { clan arena
 
 extern int ca_round_pause;
+extern qbool ft_round_over;
 
 // }
 

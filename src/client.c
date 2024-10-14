@@ -3760,7 +3760,9 @@ void CheckLand(void) {
 
 			self->deathtype = dtFALL;
 			T_Damage(self, world, world, 5);
-			sound(self, CHAN_VOICE, "player/land2.wav", 1, ATTN_NORM);
+			if (!self->in_freeze) {
+				sound(self, CHAN_VOICE, "player/land2.wav", 1, ATTN_NORM);
+			}
 
 			if (gre && (gre->s.v.takedamage == DAMAGE_AIM) && (gre != self)) {
 				// we landed on someone's head, hurt him
@@ -3768,7 +3770,10 @@ void CheckLand(void) {
 				T_Damage(gre, self, self, 10);
 			}
 		} else {
-			sound(self, CHAN_VOICE, "player/land.wav", 1, ATTN_NORM);
+			// fixes bug where player oofs forever if frozen between steps
+			if (!self->in_freeze) {
+				sound(self, CHAN_VOICE, "player/land.wav", 1, ATTN_NORM);
+			}
 		}
 	}
 
