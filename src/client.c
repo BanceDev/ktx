@@ -3558,6 +3558,8 @@ void CheckLightEffects(void) {
 			// blink and make sound while thawing
 			if (self->thaw_pulsetime < g_globalvars.time) {
 				self->thaw_pulse_on = !self->thaw_pulse_on;
+				self->s.v.items = (int)self->s.v.items ^
+								  (IT_QUAD | IT_INVULNERABILITY | IT_SUIT);
 				stuffcmd(self, "bf\n");
 				self->thaw_pulsetime = g_globalvars.time + 0.3f;
 			}
