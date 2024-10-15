@@ -1165,22 +1165,24 @@ static void track_player_next(gedict_t *observer) {
 }
 
 void CA_player_pre_think(void) {
-	if (isCA()) {
-		CA_show_greeting(self);
 
-		// Set this player to solid so we trigger checkpoints & teleports during
-		// move
-		if (cvar("k_clan_arena") == 3) {
-			self->s.v.solid = SOLID_SLIDEBOX;
-		} else {
-			self->s.v.solid = (ISDEAD(self) ? SOLID_NOT : SOLID_SLIDEBOX);
-		}
-		if (self->in_freeze) {
-			player_stand1();
-			if (self->in_thaw) {
-				if (g_globalvars.time - self->thawtime >= 3) {
-					FT_PlayerThaw();
-				}
+	if (!isCA())
+		return;
+
+	CA_show_greeting(self);
+
+	// Set this player to solid so we trigger checkpoints & teleports during
+	// move
+	if (cvar("k_clan_arena") == 3) {
+		self->s.v.solid = SOLID_SLIDEBOX;
+	} else {
+		self->s.v.solid = (ISDEAD(self) ? SOLID_NOT : SOLID_SLIDEBOX);
+	}
+	if (self->in_freeze) {
+		player_stand1();
+		if (self->in_thaw) {
+			if (g_globalvars.time - self->thawtime >= 3) {
+				FT_PlayerThaw();
 			}
 		}
 	}
