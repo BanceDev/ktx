@@ -1219,7 +1219,7 @@ void T_RadiusDamageApply(gedict_t *inflictor, gedict_t *attacker, gedict_t *head
 
 		if (head == attacker)
 		{
-			points = points * 0.5;
+			points = points * 0.6;
 		}
 		// no out of water discharge damage if k_dis 2
 		else if ((cvar("k_dis") == 2) && (dtLG_DIS == dtype) && !head->s.v.waterlevel)
@@ -1280,7 +1280,7 @@ void T_RadiusDamage(gedict_t *inflictor, gedict_t *attacker, float damage, gedic
 		return;
     }
 
-	head = trap_findradius(world, inflictor->s.v.origin, damage + 40);
+	head = trap_findradius(world, inflictor->s.v.origin, damage + 60);
 
 	while (head)
 	{
@@ -1289,7 +1289,7 @@ void T_RadiusDamage(gedict_t *inflictor, gedict_t *attacker, float damage, gedic
 			T_RadiusDamageApply(inflictor, attacker, head, damage, dtype);
 		}
 
-		head = trap_findradius(head, inflictor->s.v.origin, damage + 40);
+		head = trap_findradius(head, inflictor->s.v.origin, damage + 60);
 	}
 }
 
@@ -1298,7 +1298,7 @@ void T_RadiusDamage_Ignore2(gedict_t *inflictor, gedict_t *attacker, float damag
 {
 
 	gedict_t *head;
-	head = trap_findradius(world, inflictor->s.v.origin, damage + 40);
+	head = trap_findradius(world, inflictor->s.v.origin, damage + 60);
 
 	while (head)
 	{
@@ -1307,7 +1307,7 @@ void T_RadiusDamage_Ignore2(gedict_t *inflictor, gedict_t *attacker, float damag
 			T_RadiusDamageApply(inflictor, attacker, head, damage, dtype);
 		}
 
-		head = trap_findradius(head, inflictor->s.v.origin, damage + 40);
+		head = trap_findradius(head, inflictor->s.v.origin, damage + 60);
 	}
 }
 

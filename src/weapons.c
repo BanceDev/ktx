@@ -67,7 +67,7 @@ void W_Precache(void)
 	}
 }
 
-void W_FireSpikes(float ox);
+void W_FireSpikes(void);
 void W_FireLightning(void);
 
 
@@ -771,7 +771,7 @@ void FireBullets(float shotcount, vec3_t dir, float spread_x, float spread_y, fl
 		traceline(PASSVEC3(src), PASSVEC3(tmp), false, self);
 		if (g_globalvars.trace_fraction != 1.0)
 		{
-			TraceAttack(4, direction, classic_shotgun);
+			TraceAttack(5, direction, classic_shotgun);
 		}
 
 		shotcount = shotcount - 1;
@@ -917,7 +917,7 @@ void W_FireShotgun(void)
 void W_FireSuperShotgun(void)
 {
 	vec3_t dir;
-	int bullets = (k_yawnmode ? 21 : 14);
+	int bullets = 25;
 
 	if (self->s.v.currentammo == 1)
 	{
@@ -999,7 +999,7 @@ void T_InstaKickback(void)
 		return;
 	}
 
-	T_RadiusDamage(self, PROG_TO_EDICT(self->s.v.owner), 120, other, dtRL);
+	T_RadiusDamage(self, PROG_TO_EDICT(self->s.v.owner), 100, other, dtRL);
 	normalize(self->s.v.velocity, tmp);
 	VectorScale(tmp, -8, tmp);
 	VectorAdd(self->s.v.origin, tmp, self->s.v.origin)
@@ -1039,7 +1039,7 @@ void T_MissileExplode_Antilag(void)
 	{
 		if (head == own)
 		{
-			T_RadiusDamageApply(self, own, head, 120, dtRL);
+			T_RadiusDamageApply(self, own, head, 100, dtRL);
 		}
 
 		head = trap_findradius(head, self->s.v.origin, 160);
@@ -1115,7 +1115,7 @@ void T_MissileTouch(void)
 		gedict_t *local_explosion;
 		gedict_t *oself;
 		
-		T_RadiusDamage_Ignore2(self, PROG_TO_EDICT(self->s.v.owner), 120, other, PROG_TO_EDICT(self->s.v.owner), dtRL);
+		T_RadiusDamage_Ignore2(self, PROG_TO_EDICT(self->s.v.owner), 100, other, PROG_TO_EDICT(self->s.v.owner), dtRL);
 		local_explosion = spawn();
 
 		VectorSubtract(self->s.v.origin, self->oldangles, diff);
@@ -1159,7 +1159,7 @@ void T_MissileTouch(void)
 		}
 	}
 	else
-		T_RadiusDamage(self, PROG_TO_EDICT(self->s.v.owner), 120, other, dtRL);
+		T_RadiusDamage(self, PROG_TO_EDICT(self->s.v.owner), 100, other, dtRL);
 	//*/
 
 //  sound (self, CHAN_WEAPON, "weapons/r_exp3.wav", 1, ATTN_NORM);
@@ -1473,7 +1473,7 @@ void W_FireLightning(void)
 	VectorAdd(g_globalvars.trace_endpos, tmp, tmp);
 // qqshka - not from 'self->s.v.origin' but from 'org'
 //	LightningDamage( self->s.v.origin, tmp, self, 30 );
-	LightningDamage(org, tmp, self, 30);
+	LightningDamage(org, tmp, self, 7);
 }
 
 //=============================================================================
@@ -1496,7 +1496,7 @@ void GrenadeExplode(void)
 	}
 	else
 	{
-		T_RadiusDamage(self, PROG_TO_EDICT(self->s.v.owner), 120, world, dtGL);
+		T_RadiusDamage(self, PROG_TO_EDICT(self->s.v.owner), 100, world, dtGL);
 	}
 
 	WriteByte( MSG_MULTICAST, SVC_TEMPENTITY);
@@ -1859,119 +1859,60 @@ void superspike_touch(void)
 
 void W_FireSuperSpikes(void)
 {
-	vec3_t dir, tmp;
-	qbool wipe_spike = (cvar("k_clan_arena") == 2) && ca_round_pause && self->in_play;
+	vec3_t dir;
+	int bullets = 1;
 
 	WS_Mark(self, wpSNG);
 
-	self->ps.wpn[wpSNG].attacks++;
+	self->ps.wpn[wpSNG].attacks += bullets;
 
-	sound(self, CHAN_WEAPON, wipe_spike ? "misc/water1.wav" : "weapons/spike2.wav", 1, ATTN_NORM);
-	self->attack_finished = self->client_time + 0.2;
+	sound(self, CHAN_WEAPON, "weapons/spike2.wav", 1, ATTN_NORM);
+
+	g_globalvars.msg_entity = EDICT_TO_PROG(self);
+
+	WriteByte( MSG_ONE, SVC_SMALLKICK);
 
 	if (match_in_progress == 2)
 	{
 		if ((deathmatch != 4) && !k_bloodfest)
 		{
-			self->s.v.currentammo = self->s.v.ammo_nails = self->s.v.ammo_nails - 2;
+			self->s.v.currentammo = --(self->s.v.ammo_nails);
 			AmmoUsed(self);
 		}
 	}
 
-	aim(dir);		//dir = aim (self, 1000);
-
-	VectorCopy(self->s.v.origin, tmp);
-	tmp[2] += 16;
-	launch_spike(tmp, dir);
-	newmis->touch = (func_t) superspike_touch;
-	if (wipe_spike)
-	{
-		// Wipeout end-round flair for survivor SNG shots.
-		setmodel(newmis, "progs/s_bubble.spr");
-	}
-	else
-	{
-		setmodel(newmis, "progs/s_spike.mdl");
-	}
-	setsize(newmis, 0, 0, 0, 0, 0, 0);
-	g_globalvars.msg_entity = EDICT_TO_PROG(self);
-	WriteByte( MSG_ONE, SVC_SMALLKICK);
-
-	antilag_lagmove_all_proj(self, newmis);
-	antilag_unmove_all();
-
-	if (cvar("sv_antilag") == 1)
-	{
-		g_globalvars.newmis = EDICT_TO_PROG(world);
-		newmis = world;
-	}
+	//dir = aim (self, 100000);
+	aim(dir);
+	FireBullets(bullets, dir, 0.01, 0.01, 0, dtSNG);
 }
 
-void W_FireSpikes(float ox)
+void W_FireSpikes(void)
 {
-	vec3_t dir, tmp;
-
-	// Yawnmode: ignores alternating nails effect in nailgun
-	// - Molgrum
-	if (k_yawnmode)
-	{
-		ox = 0;
-	}
-
-	trap_makevectors(self->s.v.v_angle);
-
-	if (match_in_progress != 1)
-	{
-		if ((self->s.v.ammo_nails >= 2) && (self->s.v.weapon == IT_SUPER_NAILGUN))
-		{
-			W_FireSuperSpikes();
-
-			return;
-		}
-	}
-
-	if ((self->s.v.ammo_nails < 1) || (match_in_progress == 1))
-	{
-		self->s.v.weapon = W_BestWeapon();
-		W_SetCurrentAmmo();
-
-		return;
-	}
+	vec3_t dir;
+	int bullets = 1;
 
 	WS_Mark(self, wpNG);
 
-	self->ps.wpn[wpNG].attacks++;
+	self->ps.wpn[wpNG].attacks += bullets;
 
-	sound(self, CHAN_WEAPON, "weapons/rocket1i.wav", 1, ATTN_NORM);
-	self->attack_finished = self->client_time + 0.2;
+	sound(self, CHAN_WEAPON, "weapons/spike1.wav", 1, ATTN_NORM);
+
+	g_globalvars.msg_entity = EDICT_TO_PROG(self);
+
+	WriteByte( MSG_ONE, SVC_SMALLKICK);
 
 	if (match_in_progress == 2)
 	{
 		if ((deathmatch != 4) && !k_bloodfest)
 		{
-			self->s.v.currentammo = self->s.v.ammo_nails = self->s.v.ammo_nails - 1;
+			self->s.v.currentammo = --(self->s.v.ammo_nails);
 			AmmoUsed(self);
 		}
 	}
 
-	aim(dir);		// dir = aim (self, 1000);
-	VectorScale(g_globalvars.v_right, ox, tmp);
-	VectorAdd(tmp, self->s.v.origin, tmp);
-	tmp[2] += 16;
-	launch_spike(tmp, dir);
-
-	g_globalvars.msg_entity = EDICT_TO_PROG(self);
-	WriteByte( MSG_ONE, SVC_SMALLKICK);
-
-	antilag_lagmove_all_proj(self, newmis);
-	antilag_unmove_all();
-	
-
-	if (cvar("sv_antilag") == 1)
-	{
-		g_globalvars.newmis = EDICT_TO_PROG(world);
-		newmis = world;
-	}
+	//dir = aim (self, 100000);
+	aim(dir);
+	FireBullets(bullets, dir, 0.01, 0.01, 0, dtNG);
 }
 
 /*
