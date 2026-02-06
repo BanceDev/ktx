@@ -1866,7 +1866,7 @@ void W_FireSuperSpikes(void)
 
 	self->ps.wpn[wpSNG].attacks += bullets;
 
-	sound(self, CHAN_WEAPON, "weapons/spike2.wav", 1, ATTN_NORM);
+	sound(self, CHAN_AUTO, "weapons/spike2.wav", 1, ATTN_NORM);
 
 	g_globalvars.msg_entity = EDICT_TO_PROG(self);
 
@@ -1891,11 +1891,11 @@ void W_FireSpikes(void)
 	vec3_t dir;
 	int bullets = 1;
 
-	WS_Mark(self, wpNG);
+	WS_Mark(self, wpSNG);
 
-	self->ps.wpn[wpNG].attacks += bullets;
-
-	sound(self, CHAN_WEAPON, "weapons/spike1.wav", 1, ATTN_NORM);
+	self->ps.wpn[wpSNG].attacks += bullets;
+	// lowkey hacky solution to sound pred for client compat atm
+	sound(self, CHAN_AUTO, "weapons/spike1.wav", 1, ATTN_NORM);
 
 	g_globalvars.msg_entity = EDICT_TO_PROG(self);
 
@@ -1912,7 +1912,7 @@ void W_FireSpikes(void)
 
 	//dir = aim (self, 100000);
 	aim(dir);
-	FireBullets(bullets, dir, 0.01, 0.01, 0, dtNG);
+	FireBullets(bullets, dir, 0.01, 0.01, 0, dtSNG);
 }
 
 /*
@@ -2369,7 +2369,7 @@ void W_Attack(void)
 			}
 			else
 			{
-				self->attack_finished = self->client_time + (k_yawnmode ? 0.8 : 0.7);
+				self->attack_finished = self->client_time + 1.0;
 			}
 
 			W_FireSuperShotgun();
