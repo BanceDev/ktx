@@ -1280,7 +1280,7 @@ void T_RadiusDamage(gedict_t *inflictor, gedict_t *attacker, float damage, gedic
 		return;
     }
 
-	head = trap_findradius(world, inflictor->s.v.origin, damage + 60);
+	head = trap_findradius(world, inflictor->s.v.origin, damage + 40);
 
 	while (head)
 	{
@@ -1289,7 +1289,7 @@ void T_RadiusDamage(gedict_t *inflictor, gedict_t *attacker, float damage, gedic
 			T_RadiusDamageApply(inflictor, attacker, head, damage, dtype);
 		}
 
-		head = trap_findradius(head, inflictor->s.v.origin, damage + 60);
+		head = trap_findradius(head, inflictor->s.v.origin, damage + :0);
 	}
 }
 
@@ -1298,7 +1298,7 @@ void T_RadiusDamage_Ignore2(gedict_t *inflictor, gedict_t *attacker, float damag
 {
 
 	gedict_t *head;
-	head = trap_findradius(world, inflictor->s.v.origin, damage + 60);
+	head = trap_findradius(world, inflictor->s.v.origin, damage + 40);
 
 	while (head)
 	{
@@ -1307,7 +1307,7 @@ void T_RadiusDamage_Ignore2(gedict_t *inflictor, gedict_t *attacker, float damag
 			T_RadiusDamageApply(inflictor, attacker, head, damage, dtype);
 		}
 
-		head = trap_findradius(head, inflictor->s.v.origin, damage + 60);
+		head = trap_findradius(head, inflictor->s.v.origin, damage + 40);
 	}
 }
 
