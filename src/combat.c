@@ -1289,7 +1289,7 @@ void T_RadiusDamage(gedict_t *inflictor, gedict_t *attacker, float damage, gedic
 			T_RadiusDamageApply(inflictor, attacker, head, damage, dtype);
 		}
 
-		head = trap_findradius(head, inflictor->s.v.origin, damage + :0);
+		head = trap_findradius(head, inflictor->s.v.origin, damage + 40);
 	}
 }
 
